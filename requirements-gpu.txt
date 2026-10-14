@@ -1,0 +1,8 @@
+# Install torch first, then everything else:
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+#
+# cu121 wheels work on any NVIDIA driver >= 525. Driver is separate from the
+# CUDA *runtime* bundled inside these wheels. You do NOT need to install the
+# full CUDA Toolkit.

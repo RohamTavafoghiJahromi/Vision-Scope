@@ -1,0 +1,46 @@
+# Advanced Real-Time Visual AI Scanner — example configuration.
+# Copy to config.yaml (created automatically on first run).
+app:
+  theme: dark
+  save_dir: "./outputs"
+  log_level: INFO
+  event_history_max: 500
+
+video:
+  camera_index: 0
+  target_width: 1280
+  target_height: 720
+  process_every_n_frames: 2
+  queue_size: 4
+  prefer_smooth_playback: true
+
+models:
+  device: auto            # auto | cuda | cpu
+  detector_weights: "yolo11n.pt"
+  open_vocab_model: "IDEA-Research/grounding-dino-tiny"
+  reference_model:  "google/owlv2-base-patch16-ensemble"
+  sam_model:        "mobile_sam.pt"
+  vlm_model:        "Salesforce/blip-image-captioning-large"
+  half_precision: true
+
+thresholds:
+  detection_confidence: 0.35
+  open_vocab_box_threshold: 0.30
+  open_vocab_text_threshold: 0.25
+  reference_match_threshold: 0.35
+
+features:
+  tracking_enabled: true
+  segmentation_enabled: false
+  motion_trails: false
+  trail_length: 30
+
+targets:
+  text: []                # e.g. ["cup", "red backpack", "cardboard box"]
+  reference_image: null   # path to a query image
+
+rendering:
+  box_thickness: 2
+  label_font_scale: 0.5
+  show_confidence: true
+  show_track_id: true
