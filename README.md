@@ -561,7 +561,7 @@ That's the first-time model load. Subsequent inferences reuse the loaded model.
 ## License and model attributions
 
 VisionScope itself is released under the **MIT License** — see
-`LICENSE` (add this file before publishing).
+`LICENSE`.
 
 However, VisionScope uses third-party models with their own licenses:
 
